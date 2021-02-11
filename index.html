@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" 
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" 
+    crossorigin="anonymous" />
+
     <title>Password Generator</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h2>Passwork Generator</h2>
+        <div class="result-container">
+            <span class="result"></span>
+            <button class="btn" id="clipboard">
+                <i class="fas fa-clipboard-check"></i>
+            </button>
+        </div>
+
+        <div class="settings">
+            <div class="setting__type">
+                <label>Password Length</label>
+                <input type="number" id="pass-length" min="4" max="20" value="20">
+            </div>
+            <div class="setting__type">
+                <label>Include Uppercase Letters</label>
+                <input type="checkbox" id="pass-uppercase" checked>
+            </div>
+            <div class="setting__type">
+                <label>Include Lowercase Letters</label>
+                <input type="checkbox" id="pass-lowercase" checked>
+            </div>
+            <div class="setting__type">
+                <label>Include Numbers</label>
+                <input type="checkbox" id="pass-numbers" checked> 
+            </div>
+            <div class="setting__type">
+                <label>Include Symbols</label>
+                <input type="checkbox" id="pass-symbols" checked>
+            </div>
+
+            <button class="btn btn-generate" id="generate">
+                Generate Password
+            </button>
+        </div>
+    </div>
 </body>
+<script src="app.js"></script>
 </html>
