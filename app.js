@@ -1,4 +1,6 @@
                 // Selectors //
+
+// Function Selectors
 const randomFunction = {
     lower: getLowercase,
     upper: getUppercase,
@@ -6,9 +8,26 @@ const randomFunction = {
     symbol: getSymbol
 }
 
-                // Events ??
+// DOM Selectors
+const resultElement = document.getElementById('result')
+const lengthElement = document.getElementById('pass-length')
+const uppercaseElement = document.getElementById('pass-uppercase')
+const lowercaseElement = document.getElementById('pass-lowercase')
+const numbersElement = document.getElementById('pass-numbers')
+const symbolsElement = document.getElementById('pass-symbols')
+const generateBtn = document.getElementById('generate')
+const clipboardBtn = document.getElementById('clipboard')
 
 
+                // Events //
+//
+generateBtn.addEventListener('click', () => {
+    const length = +lengthElement.value
+    const checkedLower = lowercaseElement.value
+    const checkedUpper = uppercaseElement.value
+    const checkedNumber = numbersElement.value
+    const checkedSymbol = symbolsElement.value
+})
 
 
 
@@ -22,6 +41,7 @@ const randomFunction = {
 
 
                 // Functions //
+
 // Get Lowercase Letter
 function getLowercase() {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
