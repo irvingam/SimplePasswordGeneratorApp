@@ -20,27 +20,40 @@ const clipboardBtn = document.getElementById('clipboard')
 
 
                 // Events //
-//
+
+// Password Generation Event
 generateBtn.addEventListener('click', () => {
     const length = +lengthElement.value
-    const checkedLower = lowercaseElement.value
-    const checkedUpper = uppercaseElement.value
-    const checkedNumber = numbersElement.value
-    const checkedSymbol = symbolsElement.value
+    const checkedLower = lowercaseElement.checked
+    const checkedUpper = uppercaseElement.checked
+    const checkedNumber = numbersElement.checked
+    const checkedSymbol = symbolsElement.checked
+
+    resultElement.innerText = generatePassword(checkedLower, checkedUpper, checkedNumber, checkedSymbol, length)
 })
 
-
-
-
-
-
-
-
-
-
-
-
                 // Functions //
+
+// Puts Functions Together to Generate Password
+function generatePassword(lower, upper, number, symbol, length) {
+    let generatedPassword = ''
+    const typesCount = lower + upper + number + symbol 
+    const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0])
+
+    if(typesCount === 0) {
+        return ''
+    }
+
+    for(let i = 0; i < length; i+=typesCount) {
+        typesArr.forEach(type => {
+            const functionName = Object.keys(type)[0]
+            generatedPassword += randomFunction[functionName]()
+        })
+    }
+    const finalPassword = generatedPassword.slice(0, length)
+
+    return finalPassword
+}
 
 // Get Lowercase Letter
 function getLowercase() {
