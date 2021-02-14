@@ -32,6 +32,21 @@ generateBtn.addEventListener('click', () => {
     resultElement.innerText = generatePassword(checkedLower, checkedUpper, checkedNumber, checkedSymbol, length)
 })
 
+// Copy Password Event
+clipboardBtn.addEventListener('click', () => {
+    const textarea = document.createElement('textarea')
+    const password = resultElement.innerText
+
+    if(!password) {return}
+
+    textarea.value = password
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    textarea.remove()
+    alert('Password has been copied!')
+})
+
                 // Functions //
 
 // Puts Functions Together to Generate Password
