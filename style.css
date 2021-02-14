@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -21,7 +23,11 @@
 /* General Styles */
 
 body {
-    background-color: var(--clr-light);
+    background-image: url(background-img.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,6 +41,10 @@ body {
 h2 {
     margin: 10px 0 20px;
     text-align: center;
+}
+
+span {
+    color: white;
 }
 
 /* Class Properties */
@@ -97,5 +107,4 @@ h2 {
     justify-content: space-between;
     align-items: center;
     margin: 15px 0;
-    text-decoration: underline;
 }
